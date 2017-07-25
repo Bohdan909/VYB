@@ -11,7 +11,7 @@ document.documentElement.className = document.documentElement.className.replace(
 
             setTimeout(
                 () => { 
-                    $(".home-page").addClass("scroll");  
+                    $(".home-page, .contacts-page").addClass("scroll");  
                     animate();
                 }, 2600
             );
@@ -277,6 +277,14 @@ document.documentElement.className = document.documentElement.className.replace(
 
         }());
         
+        // Drop
+        $(".drop-btn").on("click", function(){
+            $(this).next(".drop").slideToggle(200);
+        });
+
+        $(".drop").on("click", function(){
+            $(this).slideUp(200);
+        });
 
         // Placeholder Hide
         $("input, textarea").focus(function(){

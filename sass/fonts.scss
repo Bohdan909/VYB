@@ -50,6 +50,28 @@ p {
     }
 }
 
+.title-line {
+    position: relative;
+    padding-left: 98px;
+    font-size: 24px;
+    font-family: $ita;
+
+    &:before {
+        @extend .ps;   
+        height: 1px;
+        width: 55px;
+        left: 0;
+        top: 12px;
+        background-color: #fff; 
+    }
+}
+
+.text-it {
+    font-family: $ita;
+    letter-spacing: 0.7px;
+}
+
+
 @font-face {
     font-family: 'Roboto-Regular';
     src: url('fonts/Roboto-Regular.eot');
@@ -99,3 +121,5 @@ p {
     font-weight: normal;
     font-style: normal;
 }
+
+
