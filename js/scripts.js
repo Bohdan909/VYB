@@ -17,6 +17,15 @@ document.documentElement.className = document.documentElement.className.replace(
             );
                  
         }());
+
+
+        $(".about-main").length
+            &&
+        (function(){
+            // $(".about-main").addClass("animate");  
+
+            animate();
+        }());
         
         
 
@@ -151,9 +160,9 @@ document.documentElement.className = document.documentElement.className.replace(
         // Filter
         (function(){
             var $filter = $(".filter-tabs");
-            var $portItem = $(".portfolio-block");
+            var $portItem = $(".tag-block");
 
-            scrollImit();
+            if ($("body").is(".portfolio-page")) scrollImit();
             alter();
 
             $filter.length  
@@ -166,7 +175,8 @@ document.documentElement.className = document.documentElement.className.replace(
                 $(this).parent().addClass("is-active");
 
                 $portItem.removeClass("animate is-show").hide();
-                $(".scroll.horizontal").perfectScrollbar("destroy");
+                
+                $(".scroll.horizontal").length && $(".scroll.horizontal").perfectScrollbar("destroy");
 
                 if (tag == "all"){
 
@@ -217,7 +227,7 @@ document.documentElement.className = document.documentElement.className.replace(
                 // );
                 
                 
-                scrollImit();
+                if ($("body").is(".portfolio-page")) scrollImit();
                 portfolioScroll();
             }    
 
@@ -227,6 +237,7 @@ document.documentElement.className = document.documentElement.className.replace(
         (function(){
 
             $(".preview-item").on("click", function(){
+
                 if (clickFlag === 0){
                     var $this = $(this);
                     var $portImage = $this.parents(".portfolio-block").find(".portfolio-image");
@@ -246,8 +257,7 @@ document.documentElement.className = document.documentElement.className.replace(
                         }, 500
                     );
                 }
-                
-   
+
             });
 
             var clickFlag = 1;
@@ -278,12 +288,12 @@ document.documentElement.className = document.documentElement.className.replace(
         }());
         
         // Drop
-        $(".drop-btn").on("click", function(){
-            $(this).next(".drop").slideToggle(200);
+        $(".drop-item-a .drop-btn").on("click", function(){
+            $(".drop-item-b").slideToggle(400);
         });
 
-        $(".drop").on("click", function(){
-            $(this).slideUp(200);
+        $(".drop-item-b .drop-btn").on("click", function(){
+            $(this).next(".drop").slideToggle(400);
         });
 
         // Placeholder Hide

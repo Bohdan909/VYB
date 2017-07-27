@@ -5,7 +5,7 @@
 $d: 50px;
 
 .a-move, .a-fade {
-    @include trans(0.7s);
+    @include transition(all, 1.0s, ease-out);
 }
 
 .a-move {
@@ -273,5 +273,131 @@ $d: 50px;
 
     80% {
         transform: translate(-8px,8px);    
+    }
+}
+
+
+/* --------------------
+    About
+    ------------------- */ 
+
+.about-main {
+    @include transition(max-height, 0.8s, cubic-bezier(0.25, 0.46, 0.45, 0.94));
+    max-height: 1px;
+    overflow: hidden;
+    
+    .image-circ {
+        @include transition(transform, 0.8s, ease-in);
+        @include delay(1.0s);
+        @include transform(scale(0));
+    }
+
+    &.animate {
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        max-height: 550px;
+
+        .image-circ {
+            @include transform(scale(1));
+        }
+
+        @include tablet {
+            max-height: 700px;
+        }
+
+        @include mobile {
+            max-height: 1000px;
+        }
+    }
+}
+
+.desc-main {
+
+    .desc-main--left .slash {
+        @include transition(all, 0.7s, linear);
+        @include rot(0deg);
+        opacity: 0;
+    }
+}
+
+.animate.desc-main .desc-main--left .slash {
+    @include rot(32deg);
+    opacity: 1;
+}
+
+.process {
+
+    .cols:before {
+        @include transition(width, 1.8s, linear);
+        width: 0;
+
+        @include mobile {
+            // @include transition(height, 1.8s, linear);
+        }
+    }
+    
+    &.animate .cols:after {
+        width: 100%;
+    }
+
+    &.animate .cols:before {
+        width: 796px;
+
+        @media (max-width: 1250px){
+            width: 682px;
+        }
+
+        @include mobile {
+            width: 1px;
+            height: 490px;
+        }
+    }
+}
+
+
+.service-text {
+
+    &:after {
+        @include transition(height, 0.3s, linear);
+        background: #1c1c1c;    
+    }
+
+    p {
+        @include delay(0.2s);
+    }
+
+    &:hover {
+        bottom: auto;
+
+        &:after {
+            height: 100%;   
+        }
+
+        .points {
+            opacity: 0;
+        }
+        
+        p {
+            opacity: 1;
+        }
+    }
+}
+
+/* --------------------
+    Contacts
+    ------------------- */ 
+
+.title-line {
+    
+    &:before {
+        @include transition(width, 0.5s, linear);
+        width: 0;
+    }
+
+    .animate & {
+
+        &:before {
+            @include delay(0.2s);
+            width: 55px;
+        }
     }
 }

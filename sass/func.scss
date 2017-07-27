@@ -215,6 +215,12 @@ $mobile-width : 767px;
     -ms-transition: all $time ease-out;
 }
 
+@mixin transform($exp){
+    -webkit-transform: $exp;
+    -ms-transform: $exp;
+    transform: $exp;
+} 
+
 .trans {
     transition: all 0.3s ease-out; 
     -webkit-transition: all 0.3s ease-out; 
@@ -224,9 +230,9 @@ $mobile-width : 767px;
 
 // Delay
 @mixin delay($time) {
-    -webkit-transition-delay:$time;
-    -ms-transition-delay:$time;
-    transition-delay:$time;
+    -webkit-transition-delay: $time !important;
+    -ms-transition-delay: $time !important;
+    transition-delay: $time !important;
 }
 
 @mixin a-delay($time){
