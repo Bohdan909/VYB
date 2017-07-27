@@ -3550,8 +3550,12 @@ body .logo, body .btn-menu {
   background-position: 50% 0 !important;
 }
 
-.drop-item-b {
-  display: none;
+.drop-cols {
+  display: flex;
+  display: -webkit-flexbox;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  -webkit-justify-content: space-between;
 }
 
 .cols {

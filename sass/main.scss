@@ -2854,8 +2854,12 @@ $slider-height-m: 350px;
     }
 }
 
-.drop-item-b {
-    display: none;
+.drop-cols {
+    @include flex(space-between);
+
+    .drop-img {
+
+    }
 }
 
 .cols {

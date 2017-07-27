@@ -27,8 +27,7 @@ document.documentElement.className = document.documentElement.className.replace(
             animate();
         }());
         
-        
-
+    
     });
 
     $(document).ready(function() {
@@ -288,10 +287,6 @@ document.documentElement.className = document.documentElement.className.replace(
         }());
         
         // Drop
-        $(".drop-item-a .drop-btn").on("click", function(){
-            $(".drop-item-b").slideToggle(400);
-        });
-
         $(".drop-item-b .drop-btn").on("click", function(){
             $(this).next(".drop").slideToggle(400);
         });
