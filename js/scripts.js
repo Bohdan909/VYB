@@ -375,10 +375,9 @@ document.documentElement.className = document.documentElement.className.replace(
         };
 
         $("*[data-q]").each(function(){
-            var delay = $(this).data("q");
 
             $(this).css({
-                "transition-delay":  delay + " !important"
+                "transition-delay":  $(this).data("q")
             });
         });
 
