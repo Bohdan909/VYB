@@ -283,12 +283,20 @@ document.documentElement.className = document.documentElement.className.replace(
                     startingPos = [];
                 });
 
+            $(".preview-item").each(function(){
+
+                if ( !$(this).next(".preview-item").length ) {
+                     $(this).addClass("single");
+                }
+
+                console.log($(this).next());
+            });    
 
         }());
         
         // Drop
         $(".drop-item-b .drop-btn").on("click", function(){
-            $(this).next(".drop").slideToggle(400);
+            $(this).parent().toggleClass("is-active").find(".drop").slideToggle(400);
         });
 
         // Placeholder Hide
@@ -367,8 +375,10 @@ document.documentElement.className = document.documentElement.className.replace(
         };
 
         $("*[data-q]").each(function(){
+            var delay = $(this).data("q");
+
             $(this).css({
-                "transition-delay": $(this).data("q")
+                "transition-delay":  delay + " !important"
             });
         });
 

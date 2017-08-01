@@ -28,11 +28,13 @@ function initialize() {
         new google.maps.Size(16,22)
     );
 
+
     var marker = new google.maps.Marker({
         icon: image,
         draggable: false,
         raiseOnDrag: false,
         map: map,
+        id: "id",
         position: point
     });
 
@@ -41,6 +43,7 @@ function initialize() {
         draggable: false,
         raiseOnDrag: false,
         map: map2,
+        id: "id2",
         position: point2
     });
 
