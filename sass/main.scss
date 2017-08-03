@@ -799,6 +799,10 @@ $menu-anim-dur: 0.4s;
     width: 60px;
     height: 50px;
     background-color: $col-bg;
+    
+    // To Left
+    left: 0;
+    margin: 0;
 
     &:after {
         @include tr-bottom(5px,5px,5px, #fff);
@@ -863,6 +867,10 @@ $menu-anim-dur: 0.4s;
         width: 50%;
         height: 100px;
         text-decoration: none;
+
+        &:first-child {
+            right: -1px;
+        }
 
         &:hover .office-img {
             transform: scale(1.1);
@@ -3350,8 +3358,12 @@ $slider-height-m: 350px;
     ------------------- */ 
 
 .header-slide  .title-contacts {
-    bottom: 30px;
+    bottom: 25px;
     top: auto;
+
+    // To Center
+    right: 0;
+    text-align: center;
 }
 
 .contacts-tabs {
