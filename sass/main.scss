@@ -7,11 +7,9 @@
 @import "forms";
 
 
-
 /* --------------------
     Layout
     ------------------- */   
-
 
 body { 
     background: $col-bg; 
@@ -19,11 +17,11 @@ body {
 }
 
 body.home-page, body.contacts-page {
-    height: 100vh;
+    //height: 100vh;
     overflow-y: scroll;
 
     #main {
-        height: 100vh;
+        //height: 100vh;
     }
 
     #footer {
@@ -43,11 +41,12 @@ body.home-page, body.contacts-page {
 }
 
 .menu-open body {
-    height: 100vh;
+    //height: 100vh;
     overflow-y: scroll;
+    //overflow-y: hidden;
 
     #main {
-        height: 100vh;
+        //height: 100vh;
         z-index: 100;
     }
 
@@ -129,11 +128,6 @@ html, body {
         z-index: 1;
     }
 
-    .logo {
-        top: -120px;
-        left: 0;
-    }
-
     .title {
         position: absolute;
         top: 35%;
@@ -158,13 +152,13 @@ html, body {
             
         }
 
-        .logo {
-            top: 53px;
+        // .logo {
+        //     top: 53px;
 
-            @include mobile {
-                top: 40px;
-            }
-        }
+        //     @include mobile {
+        //         top: 40px;
+        //     }
+        // }
 
         .btn-menu {
             top: 57px;
@@ -175,6 +169,8 @@ html, body {
         }
     }
 }
+
+
 
 .header-video {
     position: absolute;
@@ -321,6 +317,75 @@ body .logo, body .btn-menu {
 
 $menu-anim-dur: 0.4s;   
 
+.top-menu-socket {
+    @include transition(all, 0.8s, ease-out);
+    @include delay(1.2s);
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background: none;
+
+    transform: translateY(-120px);
+
+    &.open {
+        transform: translateY(0px);
+    }
+
+    &:after {
+        @extend .trans;
+        @extend .ps;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &.is-slide {
+
+        .socket {
+            top: -20px;
+
+            @include mobile {
+                top: -7px;
+            }
+        }
+
+        &:after {
+            background: #171717;
+        }
+    }
+
+    .socket {
+        @extend .trans;
+        top: 0;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .logo {
+        top: 53px;
+        left: 0;
+
+        @include mobile {
+            top: 40px;
+        }
+    }
+    
+    &.animate {
+        transform: translateY(0px);
+
+        .btn-menu {
+            top: 57px;
+            
+            @include mobile {
+                top: 40px;
+            }
+        }    
+    }
+}
+
 .btn-menu {
     @include trans(1.0s);
     @extend .vis-hidden;
@@ -331,16 +396,12 @@ $menu-anim-dur: 0.4s;
     display: block;
     cursor: pointer;
 
-    &.open {
-        top: -120px;
-    }
-
     &:before {
         @extend .ps;
-        left: -10px;
-        right: -10px;
-        top: -10px;
-        bottom: -10px;
+        left: -5px;
+        right: -5px;
+        top: -5px;
+        bottom: -5px;
     }
 
     i {
@@ -605,14 +666,10 @@ $menu-anim-dur: 0.4s;
     right: -450px;
     bottom: 0;
     background-color: #282828;
-    z-index: 1000;
+    z-index: 10000;
 
     .btn-menu.close {
         top: 57px;
-    }
-
-    .menu-open & {
-        //opacity: 1;
     }
 
     ul {
@@ -749,7 +806,7 @@ $menu-anim-dur: 0.4s;
 
         .menu-open & {
             opacity: 1;
-            z-index: 1000;
+            z-index: 10001;
         }
 
         ul {
@@ -789,20 +846,17 @@ $menu-anim-dur: 0.4s;
     }
 }
 
-.btn-down {
+
+.btn-down, .btn-up {
     @include transition(all, 0.5s, ease-out);
     @include delay(2.5s);
     position: absolute;
-    bottom: -50px;
     left: 50%;
     margin: 0 0 0 -30px;
     width: 60px;
     height: 50px;
     background-color: $col-bg;
     
-    // To Left
-    left: 0;
-    margin: 0;
 
     &:after {
         @include tr-bottom(5px,5px,5px, #fff);
@@ -817,10 +871,22 @@ $menu-anim-dur: 0.4s;
         top: 50%;
         margin: -3px 0 0 -4px;
     }
+}
+
+.btn-down {
+    left: 0;
+    margin: 0;
+    bottom: -50px;
 
     .animate & {
         bottom: 0;
     }
+}
+
+.btn-up {
+    @include rot(180deg);
+    bottom: -15px;
+    z-index: 100;    
 }
 
 @keyframes arrow-animate {
@@ -2535,12 +2601,11 @@ $slider-height-m: 350px;
     .title {
         color: #fff;
     }
-
-    .btn-menu i {
-        background-color: #fff;
-    }
 }
 
+.btn-menu.white i {
+    background-color: #fff;
+}
 
 /* --------------------
     About
@@ -2765,8 +2830,8 @@ $slider-height-m: 350px;
 
     .smoke {
         opacity: 0.3;
-        left: 320px;
-        top: -80px;
+        //left: 320px;
+        top: -150px;
     }
 
     // First Block
@@ -3734,7 +3799,18 @@ $slider-height-m: 350px;
     letter-spacing: 1px;
 }
 
-
+.s-circle {
+    @extend .circ;
+    @include transition(transform, 0.25s, ease-out);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    background: #171717;
+    z-index: -1;
+    opacity: 0.5;
+}
 
 .gm-style-cc,
 .gmnoprint,
