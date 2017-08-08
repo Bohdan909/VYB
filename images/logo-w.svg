@@ -1,0 +1,17 @@
+<svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg" viewBox="41.118 57.829 42.882 30.239">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <path id="Path_1" data-name="Path 1" class="cls-1" d="M42.5,58.5s11.558,27.43,12,28,4-7,4-7"/>
+  <path id="Path_2" data-name="Path 2" class="cls-1" d="M55.5,58.5l6,12"/>
+  <path id="Path_3" data-name="Path 3" class="cls-1" d="M59.5,76.5l8-18"/>
+  <path id="Path_4" data-name="Path 4" class="cls-1" d="M71.5,58.5v19"/>
+  <path id="Path_5" data-name="Path 5" class="cls-1" d="M1.5,1.5H8a4.5,4.5,0,0,1,0,9H1.5Z" transform="translate(70 66)"/>
+  <path id="Path_6" data-name="Path 6" class="cls-1" d="M1.5,1.5h6a4,4,0,0,1,0,8h-6Z" transform="translate(70 58)"/>
+</svg>

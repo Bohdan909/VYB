@@ -19,17 +19,22 @@
 	</head>
 	
 	<body class="home-page">
+		<div class="preloader"></div>
+		<!-- <div id="splash_page"></div> -->
 
-		<div class="top-menu-socket">
+		<div class="top-menu-socket animate-item-top">
 			<div class="socket">
 				<a href="index.htm" class="logo">
-					<img src="images/logo-w.png" alt="logo">
+					<img src="images/logo-w.svg" alt="logo">
 				</a>
 
 				<button class="btn-menu white open">
-					<i></i>
-					<i></i>
-					<i></i>
+					<div>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+					<span class="control-tooltip">Menu</span>
 				</button>
 			</div>
 		</div>
@@ -60,7 +65,7 @@
 				</li>
 				<li>
 					<a href="contacts.htm">
-						<span data-hover="Contacts">Contacts</span>
+						<span data-hover="Contact">Contact</span>
 					</a>
 				</li>
 			</ul>
@@ -68,13 +73,14 @@
 			<div class="lang">
 				<a class="is-active" href="">En</a>
 				<a href="">Nl</a>
+				<a href="">DE</a>
 			</div>
 		</nav><!-- / Menu -->
 
 		<div id="main">
 
 			<!-- Header -->
-			<header class="header-slide"> 
+			<header class="header-slide animate-item-top"> 
 				<div class="header-video" data-vide-bg="mp4: video/ocean, ogv: video/ocean, webm: video/ocean">
 					
 				</div>
@@ -83,7 +89,6 @@
 
 				<div class="socket">
 					
-
 					<div class="title title-animate">
 						ADDING VALUE TO YOUR PROJECT <br> BY CREATING DESIRE
 					</div>
@@ -93,16 +98,21 @@
 						<i></i>
 						<i></i>
 					</button> -->
+					
+					<div class="sound">
+						<ul>
+	                        <li></li>
+	                        <li></li>
+	                        <li></li>
+	                        <li></li>
+	                        <li></li>
+	                    </ul>
+	                    <span class="control-tooltip">Audio</span>
+                    </div>
 
-					<ul class="sound">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-
-					<button class="btn-down"></button>
+					<button class="btn-down">
+						<span class="control-tooltip">Scroll Down</span>
+					</button>
 				</div>
 			</header><!-- / Header -->
 			
@@ -130,22 +140,26 @@
 							<span class="bottom"><i></i></span>
 						</div>
 
-						<div class="title title-animate">EXPERTS IN CREATING 3D <br> VISUALISATIONS AND ANIMATIONS</div>
+						<div class="title title-animate">
+						EXPERTS IN CREATING HIGH-END <br>ARCHITECTURAL VISUALIZATION SOLUTIONS
+						</div>
 
 						<div class="title-sub a-fade" data-q="1.3s">
 							<!-- There will be two lines of smaller <br>
 							text underneath this -->
 
-							This combined with a specific selection of services like:  web and interactive design, virtual reality applications,  print and digital advertising and photography,  we are able to offer you a complete experience. 
+							This combined with a specific selection of services like: webdesign and <br>
+branding, creating applications, print and digital advertising, <br>we are able to give
+you the right tools to convince your clients of your project. 
 						</div>
 					</div>
 
-					<div class="borders-s clockwise a-fade" data-q="0.5s">
+					<!-- <div class="borders-s clockwise a-fade" data-q="0.5s">
 						<span class="left"><i></i></span>
 						<span class="top"><i></i></span>
 						<span class="right"><i></i></span>
 						<span class="bottom"><i></i></span>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
@@ -165,24 +179,29 @@
 								<span><i>vyb Christie international real estate</i></span>
 							</div>
 						</li> -->
-						<li style="background-image: url(images/slider-1.jpg)">
+						<li style="background-image: url(images/slider-5.jpg)">
 							<div class="slider-pan-title">
-								<span><i>Christie international real estate</i></span>
+								<span><i>HIGH-END APARTMENTS NEXT TO THE PARK</i></span>
 							</div>
 						</li>
 						<li style="background-image: url(images/slider-2.jpg)">
 							<div class="slider-pan-title">
-								<span><i>vyb Christie international real estate</i></span>
+								<span><i>A VIEW ON THE ZUGSPITZE</i></span>
 							</div>
 						</li>
-						<li style="background-image: url(images/slider-3.jpg)">
+						<li style="background-image: url(images/slider-7.jpg)">
 							<div class="slider-pan-title">
-								<span><i>Christie international estate</i></span>
+								<span><i>A VR YACHT EXPERIENCE</i></span>
 							</div>
 						</li>
-						<li style="background-image: url(images/slider-4.jpg)">
+						<li style="background-image: url(images/slider-8.jpg)">
 							<div class="slider-pan-title">
-								<span><i>vyb Christie international real estate</i></span>
+								<span><i>‘LIVING GREEN’ IN A GREEN ENVIRONMENT</i></span>
+							</div>
+						</li>
+						<li style="background-image: url(images/slider-6.jpg)">
+							<div class="slider-pan-title">
+								<span><i>8 LUXURY APARTMENTS IN A UNIQUE COMPLEX</i></span>
 							</div>
 						</li>
 					</ul>
@@ -345,7 +364,7 @@
 		<!-- Footer -->
 		<footer id="footer" class="animate-item a-fade" data-screen="0.1">	
 			<div class="office-wrap">
-				<a class="office-item" href="#">
+				<a class="office-item" href="contacts.htm">
 					<div class="section-mask reverse">
 						<div class="office-img-wrap">
 							<div class="office-img" 
@@ -358,7 +377,7 @@
 						<span>Central Station</span>
 					</div>
 				</a>
-				<a class="office-item" href="#">
+				<a class="office-item" href="contacts.htm">
 					<div class="section-mask">
 						<div class="office-img-wrap">
 							<div class="office-img" 
@@ -377,9 +396,17 @@
 				<button class="btn-up"></button>
 				<div class="footer-move">
 					<ul class="social">
-						<li><a href=""><img src="images/soc-1.png" alt=""></a></li>
+						<li>
+							<a href="https://www.instagram.com/visualizingyourbusiness/">
+								<img width="16" src="images/soc-1.svg" alt="">
+							</a>
+						</li>
 						<!-- <li><a href=""><img src="images/soc-2.png" alt=""></a></li> -->
-						<li><a href=""><img src="images/soc-3.png" alt=""></a></li>
+						<li>
+							<a href="https://www.linkedin.com/company-beta/10097170/">
+								<img width="20" src="images/soc-3.svg" alt="">
+							</a>
+						</li>
 					</ul>
 
 					<div class="copyright">VyB © 2017</div>
@@ -388,7 +415,9 @@
 		
 		</footer><!-- / Footer -->
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+<script src="./js/jquery.min.js"></script>
+		
        
        	<!-- Video -->
        	<script src="./js/jquery.vide.js"></script>
@@ -477,6 +506,7 @@
 		
 		<!-- Scripts -->
 		<script src="./js/modernizr.js"></script>
+		<script src="./js/meerkat.js"></script> 
 		<script src="./js/scripts.js"></script> 
 		
 		<!-- Live Reload -->

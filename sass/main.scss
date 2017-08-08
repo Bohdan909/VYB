@@ -192,19 +192,24 @@ html, body {
 }
 
 body .logo, body .btn-menu {
-    @include transition(all, 0.8s, ease-out);
+    @include transition(all, 0.6s, ease-out);
     @include delay(1.2s);
 }
 
 .logo {
     display: block;
     position: absolute;
+
+    img {
+        width: 34px;
+        height: 23px;
+    }
 }
 
 .header { // Header Inner
     position: relative;
     z-index: 10;
-    height: 160px;
+    height: 130px;
     background-color: #171717;
 
     .btn-menu.open {
@@ -246,17 +251,20 @@ body .logo, body .btn-menu {
 }
 
 .sound {
-    @extend .trans;
+    @include transition(all, 0.5s, ease-out);
+    @include delay(2.5s);
     position: absolute;
-    bottom: 35px;
+    bottom: -50px;
     right: 0;
     font-size: 0;
     cursor: pointer;
-    opacity: 0;
 
     .animate & {
-        @include delay(0.7s);
-        opacity: 1;
+        bottom: 35px;
+    }
+
+    &.off li {
+        animation-play-state: paused !important;
     }
 
     li {
@@ -267,15 +275,48 @@ body .logo, body .btn-menu {
         margin: 0 2px 0 3px;
         background-color: #fff;
         vertical-align: top;
+        overflow: hidden;
+
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        animation-duration: 1.6s;
+
+        &:nth-child(1) {
+            animation-name: sound-line-1;
+        }
 
         &:nth-child(2) {
-            height: 6px;
-            margin-top: 6px;
+            animation-name: sound-line-1;
+            animation-duration: 2.0s;
+            animation-delay: 0.2s;
+            -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+            clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+        }
+
+        &:nth-child(3) {
+            //animation-name: sound-line-3;
+            animation-duration: 1.8s;
+
+            -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 85%, 0 85%);
+            clip-path: polygon(0 15%, 100% 15%, 100% 85%, 0 85%);
         }
 
         &:nth-child(4) {
-            height: 9px;
-            margin-top: 4px;
+            //animation-name: sound-line-4;
+            animation-duration: 1.6s;
+            animation-delay: 0.3s;
+
+            -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+            clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+        }
+
+        &:nth-child(5) {
+            animation-name: sound-line-5;
+            animation-duration: 1.8s;
+            animation-delay: 0.1s;
+
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
     }
 
@@ -310,6 +351,74 @@ body .logo, body .btn-menu {
     }
 }
 
+@keyframes sound-line-1 {
+    0%, 100% {
+        // height: 18px;
+        // margin-top: 0;
+
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    50% {
+        // height: 12px;
+        // margin-top: 3px;
+
+        -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+        clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+    }
+}
+
+@keyframes sound-line-2 {
+    0%, 100% {
+        -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+        clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+    }
+
+    50% {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes sound-line-3 {
+    0%, 100% {
+        -webkit-clip-path: polygon(0 15%, 100% 15%, 100% 85%, 0 85%);
+        clip-path: polygon(0 15%, 100% 15%, 100% 85%, 0 85%);
+    }
+
+    50% {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+@keyframes sound-line-4 {
+    0%, 100% {
+        -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+        clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+    }
+
+    50% {
+       -webkit-clip-path: polygon(0 5%, 100% 5%, 100% 95%, 0 95%);
+        clip-path: polygon(0 5%, 100% 5%, 100% 95%, 0 95%);
+    }
+}
+
+@keyframes sound-line-5 {
+    0%, 100% {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    50% {
+       -webkit-clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+        clip-path: polygon(0 25%, 100% 25%, 100% 75%, 0 75%);
+    }
+}
+
+
+
 
 /* =========================
    Menu
@@ -327,6 +436,8 @@ $menu-anim-dur: 0.4s;
     height: 90px;
     background: none;
 
+    position: absolute;
+
     transform: translateY(-120px);
 
     &.open {
@@ -343,6 +454,7 @@ $menu-anim-dur: 0.4s;
     }
 
     &.is-slide {
+        position: fixed;
 
         .socket {
             top: -20px;
@@ -425,7 +537,7 @@ $menu-anim-dur: 0.4s;
         top: 7px;
 
         @include mobile {
-            top: 12px;
+            top: 9px;
         }
     }
 
@@ -433,7 +545,7 @@ $menu-anim-dur: 0.4s;
         top: 14px;
 
         @include mobile {
-            top: 24px;
+            top: 18px;
         }
     }
 
@@ -496,7 +608,30 @@ $menu-anim-dur: 0.4s;
             -webkit-animation: from-cross-right $menu-anim-dur linear ;
         }
     }
+}
 
+.control-tooltip {
+    @include transform(translateX(-30px));
+    @include transition(all, 0.8s, ease-out);
+    position: absolute;
+    width: 50px;
+    display: block;
+    color: #fff;
+    top: 1px;
+    left: -60px;
+    opacity: 0;
+    font-size: 14px;
+    white-space: nowrap;
+
+    .btn-down & {
+        @include transform(translateX(30px));
+        top: 21px;
+        left: 55px;
+    }
+
+    .sound & {
+        left: -53px;
+    }
 }
 
 .no-touchevents  {
@@ -508,6 +643,16 @@ $menu-anim-dur: 0.4s;
     // i:nth-child(3) {
     //     transform: translateY(2px) !important;
     // }
+
+    .btn-menu:hover,
+    .sound:hover,
+    .btn-down:hover {
+
+        .control-tooltip {
+            @include transform(translateX(0px));
+            opacity: 1;
+        }
+    }
 
     .btn-menu:hover {
 
@@ -630,7 +775,7 @@ $menu-anim-dur: 0.4s;
 @media (min-width: 768px){
 
     .menu, #main {
-        @include transition(all, 0.3s, ease-out);
+        @include transition(all, 0.6s, ease-out);
     }   
 
     .menu {
@@ -855,11 +1000,11 @@ $menu-anim-dur: 0.4s;
     margin: 0 0 0 -30px;
     width: 60px;
     height: 50px;
-    background-color: $col-bg;
+    //background-color: $col-bg;
     
-
-    &:after {
-        @include tr-bottom(5px,5px,5px, #fff);
+    
+    &:before, &:after {
+        @include tr-bottom(6px,6px,6px, #fff);
         @include animation(arrow-animate, 3.0s, linear);
         animation-iteration-count: infinite;
         -webkit-animation-iteration-count: infinite;
@@ -868,10 +1013,16 @@ $menu-anim-dur: 0.4s;
         display: block;
         position: absolute;
         left: 50%;
-        top: 50%;
+        top: 59%;
         margin: -3px 0 0 -4px;
     }
+
+    &:before {
+        top: 50%;
+    }
 }
+
+
 
 .btn-down {
     left: 0;
@@ -879,7 +1030,7 @@ $menu-anim-dur: 0.4s;
     bottom: -50px;
 
     .animate & {
-        bottom: 0;
+        bottom: 10px;
     }
 }
 
@@ -916,6 +1067,10 @@ $menu-anim-dur: 0.4s;
     // z-index: 1;
     height: 220px;
     background: $col-bg;
+
+    .btn-up {
+        display: none;
+    }
 
     .menu-open & {
         display: none;
@@ -1340,7 +1495,7 @@ $menu-anim-dur: 0.4s;
             display: block;
             width: 100%;
             height: 100%;
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.3);
 
             transition: all 0.5s linear;
             -webkit-transition: all 0.5s linear;
@@ -2006,7 +2161,7 @@ $slider-height-m: 350px;
         }
 
         .smoke {
-            top: -200px;
+            top: -150px;
             left: -50px;
             width: 816px;
             height: 397px;
@@ -2657,6 +2812,7 @@ $slider-height-m: 350px;
         }
 
         .text-it {
+            @include color-w(0.7);
             line-height: 28px;
         }
     }
@@ -2744,13 +2900,18 @@ $slider-height-m: 350px;
 }
 
 .desc-point {
+    position: relative;
     line-height: 35px;
     padding-right: 95px;
+    padding-left: 38px;
     margin-bottom: 30px;
 
     i {
         @extend .circ;
         display: inline-block;
+        position: absolute;
+        left: 0;
+        top: 1px;
         margin-right: 6px;
         width: 30px;
         height: 30px;
@@ -2836,7 +2997,7 @@ $slider-height-m: 350px;
 
     // First Block
     &:nth-child(1) {
-        padding-top: 120px;
+        padding-top: 150px;
         padding-bottom: 220px;
 
         .desc-main--left {
@@ -2941,6 +3102,18 @@ $slider-height-m: 350px;
     position: relative;
     margin-bottom: 15px;
 
+    &:nth-child(2) .drop-btn span:after {
+        animation-delay: 0.2s !important;
+    }
+
+    &:nth-child(3) .drop-btn span:after {
+        animation-delay: 0.4s !important;
+    }
+
+    &:nth-child(4) .drop-btn span:after {
+        animation-delay: 0.6s !important;
+    }
+
     .drop-btn {
         position: relative;
         height: 100px;
@@ -2972,6 +3145,8 @@ $slider-height-m: 350px;
                 top: 50%;
                 margin-top: -7px;
                 border-width: 2px;
+
+                animation: stAnimate 3.0s linear infinite;
             }
         }
 
@@ -2987,7 +3162,9 @@ $slider-height-m: 350px;
 
     &.is-active .drop-btn span:after {
         @include rot(-45deg);
-        margin-top: -3px;
+        margin-top: -3px !important;
+
+        animation-play-state: paused !important;
     }
 
     .drop {
@@ -3012,6 +3189,20 @@ $slider-height-m: 350px;
         margin-top: 14px;
         background-size: cover !important;
         background-position: 50% 0 !important;
+    }
+}
+
+@keyframes stAnimate {
+    0%, 100% {
+        margin-top: -7px;
+    }
+
+    25% {
+        margin-top: -5px;
+    }
+
+    75% {
+        margin-top: -9px;
     }
 }
 
@@ -3093,6 +3284,16 @@ $slider-height-m: 350px;
     position: relative;
     padding-top: 50px;
     text-align: center;
+
+    > div {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        @include mobile {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
 
     &:before {
         @extend .ps;
@@ -3282,17 +3483,22 @@ $slider-height-m: 350px;
     flex: 1 auto;
 
     &:hover {
-        z-index: 100;
+        //z-index: 100;
     }
 
     &:after {
         @extend .ps;
+        @include color-w(0.3);
+        content: "&";
         left: -10px;
         top: 50px;
         width: 21px;
         height: 50px;
+        line-height: 46px;
         z-index: 2;
-        background: $col-bg url(../images/f.png) no-repeat 0 16px;
+        font-family: $ita;
+        font-size: 25px;
+        background: $col-bg;
     }
 
     &:first-child:after {
@@ -3422,13 +3628,20 @@ $slider-height-m: 350px;
     Contacts
     ------------------- */ 
 
-.header-slide  .title-contacts {
+.header-slide .title-contacts {
     bottom: 25px;
     top: auto;
 
     // To Center
     right: 0;
     text-align: center;
+}
+
+.title-office {
+    text-align: center;
+    right: 0;
+    top: 50% !important;
+    margin-top: -12px;
 }
 
 .contacts-tabs {
@@ -3577,13 +3790,15 @@ $slider-height-m: 350px;
             &.tel:before {
                 width: 12px;
                 height: 11px;
-                background: url(../images/tel.png) no-repeat;
+                background: url(../images/tel.svg) no-repeat;
+                background-size: 12px 11px;
             }
 
             &.mail:before {
                 width: 14px;
                 height: 14px;
-                background: url(../images/mail.png) no-repeat;
+                background: url(../images/mail.svg) no-repeat;
+                background-size: 14px 14px;
             }
         }
     }
@@ -3718,7 +3933,7 @@ $slider-height-m: 350px;
     @include clearfix;
     margin-bottom: 75px;
 
-    > div {
+    > div, .map-address {
         float: left;
         width: 50%;
         height: 230px;
@@ -3734,8 +3949,14 @@ $slider-height-m: 350px;
     }
 
     .map-address {
+        display: block;
         padding: 40px 50px 0;
         background-color: #171717;
+        text-decoration: none;
+
+        span {
+            display: block;
+        }
 
         .text-a {
             margin-bottom: 14px;
@@ -3820,3 +4041,16 @@ $slider-height-m: 350px;
     display: none !important;
 }
 
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;   
+    height: 100%;
+    background-color: #000;
+    z-index: 999999;
+
+    .no-js & {
+        display: none !important;
+    }
+}

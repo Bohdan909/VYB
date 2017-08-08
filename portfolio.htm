@@ -19,11 +19,13 @@
 	</head>
 	
 	<body class="portfolio-page">
+		<div class="preloader"></div>
+        <!-- <div id="splash_page"></div> -->
 
 		<div class="top-menu-socket animate">
             <div class="socket">
                 <a href="index.htm" class="logo">
-                    <img src="images/logo-w.png" alt="logo">
+                    <img src="images/logo-w.svg" alt="logo">
                 </a>
 
                 <button class="btn-menu white open">
@@ -60,7 +62,7 @@
 				</li>
 				<li>
 					<a href="contacts.htm">
-						<span data-hover="Contacts">Contacts</span>
+						<span data-hover="Contact">Contact</span>
 					</a>
 				</li>
 			</ul>
@@ -68,13 +70,14 @@
 			<div class="lang">
 				<a class="is-active" href="">En</a>
 				<a href="">Nl</a>
+				<a href="">DE</a>
 			</div>
 		</nav><!-- / Menu -->
 
 		<div id="main">
 
 			<!-- Header -->
-			<header class="header"> 
+			<header class="header animate-item-top a-fade"> 
 				<div class="socket-i">
 					
 				</div>
@@ -85,7 +88,7 @@
 			<div class="s-circle"></div>
 			
 			<div class="socket-i">
-				<ul class="tabs filter-tabs">
+				<ul class="tabs filter-tabs animate-item-top">
 					<li class="is-active">
 						<a href="#all">
 							<span>All</span>
@@ -110,7 +113,7 @@
 				
 				<div class="portfolio-wrap">
 
-					<div class="portfolio-block tag-block is-show animate-item" data-screen="0.2" data-tags="com res">
+					<div class="portfolio-block tag-block is-show animate-item-top" data-screen="0.2" data-tags="com res">
 
 						<div class="portfolio-image-col a-fade" data-q="0.4s">
 							<div class="portfolio-image">
@@ -189,20 +192,20 @@
 						<div class="portfolio-image-col a-fade" data-q="0.4s">
 							<div class="portfolio-image">
 								<div class="portfolio-mask">
-									<img src="images/image-main-2.jpg" alt="">
+									<img src="images/image-main-2-1.jpg" alt="">
 								</div>
 							</div>
 							<div class="portfolio-preview-list scroll horizontal dragscroll">
 								<div class="portfolio-preview-inner">
 		
 									<div class="preview-item" 
-									     data-img="images/image-main-2.jpg">
+									     data-img="images/image-main-2-1.jpg">
 
-										<div class="img"><img src="images/image-2.jpg" alt=""></div>
+										<div class="img"><img src="images/image-2-1.jpg" alt=""></div>
 
 										<div class="borders count-clockwise">
-											<span class="left"><i data-q="2.0s"></i></span>
-											<span class="bottom"><i data-q="2.2s"></i></span>
+											<span class="left"><i></i></span>
+											<span class="bottom"><i></i></span>
 										</div>
 									</div>
 
@@ -213,10 +216,10 @@
 
 										<div class="borders clockwise">
 											<span class="left">
-												<i data-q="2.7s"></i>
+												<i></i>
 											</span>
 											<span class="top">
-												<i data-q="2.9s"></i>
+												<i></i>
 											</span>
 										</div>
 									</div>
@@ -227,8 +230,8 @@
 										<div class="img"><img src="images/image-2-3.jpg" alt=""></div>
 
 										<div class="borders count-clockwise">
-											<span class="left"><i data-q="3.4s"></i></span>
-											<span class="bottom"><i data-q="3.6s"></i></span>
+											<span class="left"><i></i></span>
+											<span class="bottom"><i></i></span>
 										</div>
 									</div>
 
@@ -238,8 +241,8 @@
 										<div class="img"><img src="images/image-2-4.jpg" alt=""></div>
 
 										<div class="borders clockwise">
-											<span class="left"><i data-q="4.1s"></i></span>
-											<span class="top"><i data-q="4.3s"></i></span>
+											<span class="left"><i></i></span>
+											<span class="top"><i></i></span>
 										</div>
 									</div>
 
@@ -249,8 +252,8 @@
 										<div class="img"><img src="images/image-2-5.jpg" alt=""></div>
 
 										<div class="borders count-clockwise">
-											<span class="left"><i data-q="4.8s"></i></span>
-											<span class="bottom"><i data-q="5.0s"></i></span>
+											<span class="left"><i></i></span>
+											<span class="bottom"><i></i></span>
 										</div>
 									</div>
 
@@ -1900,7 +1903,7 @@
 		<!-- Footer -->
 		<footer id="footer" class="animate-item a-fade" data-screen="0.1">	
 			<div class="office-wrap">
-				<a class="office-item" href="#">
+				<a class="office-item" href="contacts.htm">
 					<div class="section-mask reverse">
 						<div class="office-img-wrap">
 							<div class="office-img" 
@@ -1913,7 +1916,7 @@
 						<span>Central Station</span>
 					</div>
 				</a>
-				<a class="office-item" href="#">
+				<a class="office-item" href="contacts.htm">
 					<div class="section-mask">
 						<div class="office-img-wrap">
 							<div class="office-img" 
@@ -1932,9 +1935,17 @@
 				<button class="btn-up"></button>
 				<div class="footer-move">
 					<ul class="social">
-						<li><a href=""><img src="images/soc-1.png" alt=""></a></li>
+						<li>
+							<a href="https://www.instagram.com/visualizingyourbusiness/">
+								<img width="16" src="images/soc-1.svg" alt="">
+							</a>
+						</li>
 						<!-- <li><a href=""><img src="images/soc-2.png" alt=""></a></li> -->
-						<li><a href=""><img src="images/soc-3.png" alt=""></a></li>
+						<li>
+							<a href="https://www.linkedin.com/company-beta/10097170/">
+								<img width="20" src="images/soc-3.svg" alt="">
+							</a>
+						</li>
 					</ul>
 
 					<div class="copyright">VyB © 2017</div>
@@ -1950,17 +1961,13 @@
 		<!-- Drag Scroll -->
 		<script src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
 
-		
-
-        <!-- Anything Slider -->
-        <script src="./js/jquery.anythingslider.min.js"></script>
-                 
 		<!-- Scroll Perfect -->
         <script src="./js/jquery.mousewheel.min.js"></script>
         <script src="./js/perfect-scrollbar.jquery.min.js"></script>	
 
 		<!-- Scripts -->
 		<script src="./js/modernizr.js"></script>
+		<script src="./js/meerkat.js"></script> 
 		<script src="./js/scripts.js"></script> 
 		
 		<!-- Live Reload -->

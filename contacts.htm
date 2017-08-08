@@ -19,17 +19,22 @@
 	</head>
 	
 	<body class="contacts-page">
+		<div class="preloader"></div>
+        <!-- <div id="splash_page"></div> -->
 
-		<div class="top-menu-socket">
+		<div class="top-menu-socket animate-item-top">
             <div class="socket">
                 <a href="index.htm" class="logo">
-                    <img src="images/logo-w.png" alt="logo">
+                    <img src="images/logo-w.svg" alt="logo">
                 </a>
 
                 <button class="btn-menu white open">
-                    <i></i>
-                    <i></i>
-                    <i></i>
+                   <div>
+						<i></i>
+						<i></i>
+						<i></i>
+					</div>
+					<span class="control-tooltip">Menu</span>
                 </button>
             </div>
         </div>
@@ -37,9 +42,11 @@
 		<!-- Menu -->
 		<nav class="menu">
 			<button class="btn-menu close">
-				<i></i>
-				<i></i>
-				<i></i>
+				<div>
+					<i></i>
+					<i></i>
+					<i></i>
+				</div>
 			</button>
 
 			<ul>    
@@ -60,7 +67,7 @@
 				</li>
 				<li>
 					<a href="contacts.htm">
-						<span data-hover="Contacts">Contacts</span>
+						<span data-hover="Contact">Contact</span>
 					</a>
 				</li>
 			</ul>
@@ -68,13 +75,14 @@
 			<div class="lang">
 				<a class="is-active" href="">En</a>
 				<a href="">Nl</a>
+				<a href="">DE</a>
 			</div>
 		</nav><!-- / Menu -->
 
 		<div id="main">
 
 			<!-- Header -->
-			<header class="header-slide"> 
+			<header class="header-slide animate-item-top"> 
 				<div class="header-video" data-vide-bg="mp4: video/VYB, ogv: video/VYB, webm: video/VYB">
 					
 				</div>
@@ -85,18 +93,24 @@
 					
 
 					<div class="title title-animate title-contacts">Paul Hemmen</div>
-
+					
+					<div class="title title-animate title-office">OUR OFFICE IN ARNHEM</div>	
 					
 
-					<ul class="sound">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
+					<div class="sound">
+						<ul>
+	                        <li></li>
+	                        <li></li>
+	                        <li></li>
+	                        <li></li>
+	                        <li></li>
+	                    </ul>
+	                    <span class="control-tooltip">Audio</span>
+                    </div>
 
-					<button class="btn-down"></button>
+					<button class="btn-down">
+						<span class="control-tooltip">Scroll Down</span>
+					</button>
 				</div>
 			</header><!-- / Header -->
 			
@@ -152,11 +166,11 @@
 
                         <div class="intro-bottom">
                             <div class="a-fade" data-q="1.5s">
-                                <a class="tel" href="">+31 [0]6 13 53 72 60 </a>
+                                <a class="tel" href="tel:+310613537260">+31 [0]6 13 53 72 60 </a>
                             </div>
 
                             <div class="a-fade" data-q="1.5s">
-                                <a class="mail" href="">mbolhuis@vybvysualization.com</a>
+                                <a class="mail" href="mailto: marco@vybvisualization.com">  marco@vybvisualization.com</a>
                             </div>
                         </div>
                     </div>
@@ -166,17 +180,19 @@
                     <div class="map a-fade" data-q="0.4s">
                         <div id="map-canvas"></div>
                     </div>
-                    <div class="map-address">
-                        <div class="text-a a-fade" data-q="0.9s">
+                    <a class="map-address" href="https://www.google.nl/maps/place/VyB/
+@51.9843693,5.8985843,17z/data=!3m1!4b1!4m5!3m4!1s0x47c7a44a44c5dc5f:0x54d4e70d0f6ee02!
+8m2!3d51.984366!4d5.900773" target="_blank">
+                        <span class="text-a a-fade" data-q="0.9s">
                         	Nieuwe Stationsstraat 20
-                        </div>
-                        <div class="text-a a-fade" data-q="0.9s">
+                        </span>
+                        <span class="text-a a-fade" data-q="0.9s">
                         	6811 KS Arnhem
-                        </div>
-                        <div class="text-a country a-fade" data-q="0.9s">
+                        </span>
+                        <span class="text-a country a-fade" data-q="0.9s">
                         	The Netherlands
-                        </div>
-                    </div>
+                        </span>
+                    </a>
                 </div>
 
 
@@ -184,7 +200,7 @@
                     <div class="map a-fade" data-q="0.4s">
                         <div id="map-canvas2"></div>
                     </div>
-                    <div class="map-address">
+                    <a class="map-address" href="#" target="_blank">
                         <div class="text-a a-fade" data-q="0.9s">
                         	Nieuwe Stationsstraat 20
                         </div>
@@ -194,7 +210,7 @@
                         <div class="text-a country a-fade" data-q="0.9s">
                         	Germany
                         </div>
-                    </div>
+                    </a>
                 </div>
 
             </div>
@@ -238,9 +254,17 @@
 				<button class="btn-up"></button>
 				<div class="footer-move">
 					<ul class="social">
-						<li><a href=""><img src="images/soc-1.png" alt=""></a></li>
+						<li>
+							<a href="https://www.instagram.com/visualizingyourbusiness/">
+								<img width="16" src="images/soc-1.svg" alt="">
+							</a>
+						</li>
 						<!-- <li><a href=""><img src="images/soc-2.png" alt=""></a></li> -->
-						<li><a href=""><img src="images/soc-3.png" alt=""></a></li>
+						<li>
+							<a href="https://www.linkedin.com/company-beta/10097170/">
+								<img width="20" src="images/soc-3.svg" alt="">
+							</a>
+						</li>
 					</ul>
 
 					<div class="copyright">VyB © 2017</div>
@@ -249,7 +273,9 @@
 		
 		</footer><!-- / Footer -->
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+       
+       <script src="./js/jquery.min.js"></script>
        
        	<!-- Video -->
        	<script src="./js/jquery.vide.js"></script>
@@ -266,6 +292,7 @@
 		
 		<!-- Scripts -->
 		<script src="./js/modernizr.js"></script>
+		<script src="./js/meerkat.js"></script> 
 		<script src="./js/scripts.js"></script> 
 		
 		<!-- Live Reload -->
