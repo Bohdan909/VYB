@@ -460,6 +460,43 @@
   width: 55px;
 }
 
+@keyframes draw-lines {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.preloader svg * {
+  fill-opacity: 0;
+  stroke: #fff;
+  stroke-width: 0.4;
+}
+
+.preloader svg * {
+  animation-name: drawLogo;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+@keyframes drawLogo {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  75% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    fill-opacity: 0;
+  }
+  100% {
+    fill-opacity: 1;
+  }
+}
 /* =========================
    Fonts
    =========================*/
@@ -4607,8 +4644,9 @@ body .logo, body .btn-menu {
 .no-js .preloader {
   display: none !important;
 }
-.preloader img {
+.preloader svg {
   position: absolute;
+  width: 100px;
   top: 50%;
   left: 50%;
   margin: -50px 0 0 -50px;

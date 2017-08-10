@@ -4071,8 +4071,9 @@ $slider-height-m: 350px;
         display: none !important;
     }
 
-    img {
+    svg {
         position: absolute;
+        width: 100px;
         top: 50%;
         left: 50%;
         margin: -50px 0 0 -50px;

@@ -90,12 +90,16 @@ document.documentElement.className = document.documentElement.className.replace(
         $(this).scrollTop(0);
 
         setTimeout( () => {
-            $(".preloader").fadeOut(2000);
-        }, 1000);
+            $(".preloader").fadeOut(1000);
+        }, 1500);
 
         setTimeout( () => {
             $(".animate-item-top").addClass("animate");
         }, 1500);
+
+        // Logo Draw
+        replaceWithPaths($("#logo"));
+        setDash($("#logo"));
 
         // Header Scroll
         (function(){
@@ -171,6 +175,7 @@ document.documentElement.className = document.documentElement.className.replace(
         $(".menu li a, .logo").on("click", function(){
             var href = $(this).attr('href');
 
+            $(".preloader svg").hide();
             $(".preloader").fadeIn(1000);
 
             setTimeout(function() {window.location = href}, 1200);

@@ -1,17 +1,14 @@
-<svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg" viewBox="41.118 57.829 42.882 30.239">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="1315 770 34 23.661">
   <defs>
     <style>
       .cls-1 {
-        fill: none;
-        stroke: #fff;
-        stroke-width: 3px;
+        fill: #fff;
       }
     </style>
   </defs>
-  <path id="Path_1" data-name="Path 1" class="cls-1" d="M42.5,58.5s11.558,27.43,12,28,4-7,4-7"/>
-  <path id="Path_2" data-name="Path 2" class="cls-1" d="M55.5,58.5l6,12"/>
-  <path id="Path_3" data-name="Path 3" class="cls-1" d="M59.5,76.5l8-18"/>
-  <path id="Path_4" data-name="Path 4" class="cls-1" d="M71.5,58.5v19"/>
-  <path id="Path_5" data-name="Path 5" class="cls-1" d="M1.5,1.5H8a4.5,4.5,0,0,1,0,9H1.5Z" transform="translate(70 66)"/>
-  <path id="Path_6" data-name="Path 6" class="cls-1" d="M1.5,1.5h6a4,4,0,0,1,0,8h-6Z" transform="translate(70 58)"/>
+  <g id="Group_1" data-name="Group 1" transform="translate(418 274)">
+    <path id="Path_1" data-name="Path 1" class="cls-1" d="M91.4,6.848H90.385V1.625h1.466l1.039.027.879.107.719.187.586.266.453.346.32.453.187.533.053.613-.053.666-.187.56-.32.453-.48.373-.639.266-.8.187-.986.107Zm1.439,7.461H90.385V8.447h2.451l1.013.053.879.133.719.24.586.32.453.426.32.506.187.613.053.693-.053.693-.187.586-.32.506-.453.4-.586.32-.719.213-.879.133ZM88.6,0V15.934h4.024l1.519-.08,1.306-.213,1.092-.373.879-.506.693-.666.48-.826.293-.959.107-1.119-.053-.639-.133-.586-.213-.533L98.3,8.926l-.373-.453-.453-.4-.533-.346-.613-.293-.24-.107.213-.133.373-.266.32-.293.293-.32.24-.346.24-.373.133-.426.08-.453.027-.48-.08-1.013-.266-.879-.453-.719-.64-.586L95.741.586,94.649.266,93.423.08,91.984,0Z" transform="translate(832.008 496)"/>
+    <path id="Path_2" data-name="Path 2" class="cls-1" d="M48.849,8.5,45.145,0H43.2l4.663,10.765-2.238,5.169H47.57L54.524,0H52.553Z" transform="translate(865.311 496)"/>
+    <path id="Path_3" data-name="Path 3" class="cls-1" d="M11.564,20.757,2.531,0H0L10.285,23.661h2.531l3.011-6.955h-2.5Z" transform="translate(897 496)"/>
+  </g>
 </svg>
