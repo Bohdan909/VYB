@@ -163,6 +163,33 @@ $d: 50px;
             transform: translateY(0px);
         }
     }
+
+    &.title-main {
+
+        > div:nth-child(2) {
+
+            span {
+                @include delay(4.0s);
+                transition-duration: 1.5s;
+            }
+        }
+    }
+}
+
+.animate {
+
+    .header-video:after {
+        @include transition(opacity, 2.0s, linear);
+        @include delay(10s);
+        opacity: 0.55;
+    }
+
+    .title-main {
+        @include transition(opacity, 2.0s, linear);
+        @include delay(9s);
+        opacity: 0;
+    }
+    
 }
 
 .slider-pan-title {

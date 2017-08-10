@@ -19,7 +19,9 @@
 	</head>
 	
 	<body class="home-page">
-		<div class="preloader"></div>
+		<div class="preloader">
+			<img width="100" src="images/logo-w.svg" alt="logo">
+		</div>
 		<!-- <div id="splash_page"></div> -->
 
 		<div class="top-menu-socket animate-item-top">
@@ -81,7 +83,7 @@
 
 			<!-- Header -->
 			<header class="header-slide animate-item-top"> 
-				<div class="header-video" data-vide-bg="mp4: video/ocean, ogv: video/ocean, webm: video/ocean">
+				<div class="header-video" data-vide-bg="mp4: video/short">
 					
 				</div>
 
@@ -89,8 +91,9 @@
 
 				<div class="socket">
 					
-					<div class="title title-animate">
-						ADDING VALUE TO YOUR PROJECT <br> BY CREATING DESIRE
+					<div class="title title-main title-animate">
+						ADDING VALUE TO YOUR PROJECT BY CREATING DESIRE <br> 
+						WITH THE HELP OF HIGH-END 3D VISUALS BY VYB 
 					</div>
 
 					<!-- <button class="btn-menu open">
@@ -99,7 +102,7 @@
 						<i></i>
 					</button> -->
 					
-					<div class="sound">
+					<div class="sound off">
 						<ul>
 	                        <li></li>
 	                        <li></li>
@@ -416,7 +419,8 @@ you the right tools to convince your clients of your project.
 		</footer><!-- / Footer -->
 
 		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-<script src="./js/jquery.min.js"></script>
+		
+		<script src="./js/jquery.min.js"></script>
 		
        
        	<!-- Video -->
@@ -491,14 +495,7 @@ you the right tools to convince your clients of your project.
 		<script src="./js/jquery.leanorama.js"></script>
 		<link type="text/css" rel="stylesheet" href="css/leanorama.css" />
 
-		<script>
-			// $(function(){
-			// 	$('#pan1').leanorama({
-
-			// 	});
-			// })
-		</script>
-
+		
 		
         <!-- Anything Slider -->
         <script src="./js/jquery.anythingslider.min.js"></script>
@@ -508,6 +505,26 @@ you the right tools to convince your clients of your project.
 		<script src="./js/modernizr.js"></script>
 		<script src="./js/meerkat.js"></script> 
 		<script src="./js/scripts.js"></script> 
+
+		<script>
+			window.onload = function (){
+				var $soundBtn = document.querySelector(".sound");
+		        var video = document.querySelector(".header-video video");
+		        
+		               
+		        $soundBtn.addEventListener("click", function(){
+		            
+		            if (video.muted) {
+		                video.muted = false;
+		            } else {
+		                video.muted = true;
+		            }
+
+		        });
+			}
+			
+		</script>
+
 		
 		<!-- Live Reload -->
 		<script src="http://localhost:35729/livereload.js"></script>

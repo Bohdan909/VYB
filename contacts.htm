@@ -97,7 +97,7 @@
 					<div class="title title-animate title-office">OUR OFFICE IN ARNHEM</div>	
 					
 
-					<div class="sound">
+					<div class="sound off">
 						<ul>
 	                        <li></li>
 	                        <li></li>
@@ -294,6 +294,25 @@
 		<script src="./js/modernizr.js"></script>
 		<script src="./js/meerkat.js"></script> 
 		<script src="./js/scripts.js"></script> 
+
+		<script>
+			window.onload = function (){
+				var $soundBtn = document.querySelector(".sound");
+		        var video = document.querySelector(".header-video video");
+		        
+		               
+		        $soundBtn.addEventListener("click", function(){
+		            
+		            if (video.muted) {
+		                video.muted = false;
+		            } else {
+		                video.muted = true;
+		            }
+
+		        });
+			}
+			
+		</script>
 		
 		<!-- Live Reload -->
 		<script src="http://localhost:35729/livereload.js"></script>

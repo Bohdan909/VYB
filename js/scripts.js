@@ -124,7 +124,11 @@ document.documentElement.className = document.documentElement.className.replace(
             scrollDirection();
         }());
 
+
         
+        
+        
+
 
         // Cursor    
         var circle_xy = $('.s-circle').height()/2;
