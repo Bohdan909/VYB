@@ -5,7 +5,8 @@
 		<meta charset="utf-8" />
 		<title>VYB</title>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" /> 
+        
 		<meta name="format-detection" content="telephone=no">
 		<meta name="format-detection" content="address=no">
 		<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico" />
@@ -25,24 +26,59 @@
         </div>
         <!-- <div id="splash_page"></div> -->
         
-        <div class="top-menu-socket animate">
+        <div class="top-menu-socket inner animate">
             <div class="socket">
                 <a href="index.htm" class="logo">
                     <img src="images/logo-w.svg" alt="logo">
                 </a>
 
-                <button class="btn-menu white open">
-                    <div>
-                        <i></i>
-                        <i></i>
-                        <i></i>
-                    </div>
-                    <span class="control-tooltip">Menu</span>
-                </button>
+                <div class="menu-wrap">
+                    <button class="btn-menu white open">
+                        <div>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+                        <span class="control-tooltip">Menu</span>
+                    </button>
+
+                    <nav class="menu">
+
+                        <ul>    
+                            <li>
+                                <a href="index.htm">
+                                    <span data-hover="Home">Home</span>
+                                </a>
+                            </li>                                            
+                            <li>
+                                <a href="about.htm">
+                                    <span data-hover="About">About</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portfolio.htm">
+                                    <span data-hover="Portfolio">Portfolio</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contacts.htm">
+                                    <span data-hover="Contact">Contact</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="lang">
+                            <a class="is-active" href="">En</a>
+                            <a href="">Nl</a>
+                            <a href="">De</a>
+                        </div>
+                    </nav>
+                </div>
+
             </div>
         </div>
 
-		<!-- Menu -->
+		<!-- 
 		<nav class="menu">
 			<button class="btn-menu close">
 				<i></i>
@@ -78,7 +114,7 @@
                 <a href="">Nl</a>
                 <a href="">DE</a>
             </div>
-		</nav><!-- / Menu -->
+		</nav> Menu -->
 
 		<div id="main">
 
@@ -144,7 +180,7 @@
                         <p>
                             We add value to your unbuild project by creating desire. By creating an
 ‘environment’ in which your potential customers / clients desire your upcoming
-project, you should always* be able to profit from our services. 
+project, you should always be able to profit from our services. 
                         </p>
 
                         <p>
@@ -183,7 +219,7 @@ have the same high standards in regards to quality and attention to detail.
                     <div class="cols">  
                         <div class="drop-item drop-item-b a-fade" data-q="0.6s">
                             <div class="drop-btn">
-                                <span>computer-generated imagery (CGI)</span>
+                                <span>high-end <i>computer-generated</i> imagery (CGI) <em></em></span>
                             </div>
 
                             <div class="drop">
@@ -192,12 +228,12 @@ have the same high standards in regards to quality and attention to detail.
                                         <div class="title"><span>images</span></div>
                                     </div>
 
-                                    <div class="drop-img" style="background-image: url(images/drop-02.jpg);">
-                                        <div class="title"><span>movies</span></div>
+                                    <div class="drop-img" style="background-image: url(images/drop-02.png);">
+                                        <div class="title"><span>cgi movies </span></div>
                                     </div>
 
-                                    <div class="drop-img" style="background-image: url(images/drop-03.jpg);">
-                                        <div class="title"><span>virtual reality images</span></div>
+                                    <div class="drop-img" style="background-image: url(images/drop-03.png);">
+                                        <div class="title"><span>virtual reality </span></div>
                                     </div>
                                 </div>
                             </div>
@@ -205,48 +241,48 @@ have the same high standards in regards to quality and attention to detail.
 
                         <div class="drop-item drop-item-b a-fade" data-q="0.8s">
                             <div class="drop-btn">
-                                <span>web design / branding</span>
+                                <span>webdesign <em></em></span>
                             </div>
 
                             <div class="drop">
                                 <div class="drop-img" style="background-image: url(images/drop-1.jpg);">
-                                    <div class="title"><span>websites</span></div>
+                                    <div class="title"><span>EXCLUSIVE INTERACTIVE <br> WEBDESIGN & DEVELOPMENT</span></div>
                                 </div>
 
                                 <div class="drop-img" style="background-image: url(images/drop-2.jpg);">
-                                    <div class="title"><span>branding</span></div>
+                                    <div class="title"><span>LOGO AND PROJECT <br>IDENTITY CREATION</span></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="drop-item drop-item-b a-fade" data-q="1.0s">
                             <div class="drop-btn">
-                                <span>applications</span>
+                                <span>applications <em></em></span>
                             </div>
 
                             <div class="drop">
                                 <div class="drop-img" style="background-image: url(images/drop-3.jpg);">
-                                    <div class="title"><span>interactive</span></div>
+                                    <div class="title"><span>INTERACTIVE APPLICATIONS <br>FOR CGI CONTENT</span></div>
                                 </div>
 
                                 <div class="drop-img" style="background-image: url(images/drop-4.jpg);">
-                                    <div class="title"><span>virtual reality applications</span></div>
+                                    <div class="title"><span>VIRTUAL REALITY APPLICATIONS</span></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="drop-item drop-item-b a-fade" data-q="1.2s">
                             <div class="drop-btn">
-                                <span>print and digital advertising</span>
+                                <span>PRINT AND DIGITAL ADVERTISING <em></em></span>
                             </div>
 
                             <div class="drop">
                                 <div class="drop-img" style="background-image: url(images/drop-5.jpg);">
-                                    <div class="title"><span>brochures</span></div>
+                                    <div class="title"><span>EXCLUSIVE BROCHURES</span></div>
                                 </div>
 
                                 <div class="drop-img" style="background-image: url(images/drop-6.jpg);">
-                                    <div class="title"><span>banners</span></div>
+                                    <div class="title"><span>ATTRACTIVE BANNERS</span></div>
                                 </div>
                             </div>
                         </div>

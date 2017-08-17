@@ -31,18 +31,54 @@
                     <img src="images/logo-w.svg" alt="logo">
                 </a>
 
-                <button class="btn-menu white open">
-                   <div>
-						<i></i>
-						<i></i>
-						<i></i>
-					</div>
-					<span class="control-tooltip">Menu</span>
-                </button>
+                <!-- Menu -->
+				<div class="menu-wrap">
+					<button class="btn-menu white open">
+						<div>
+							<i></i>
+							<i></i>
+							<i></i>
+						</div>
+						<span class="control-tooltip">Menu</span>
+					</button>
+
+					
+					<nav class="menu">
+
+						<ul>    
+							<li>
+								<a href="index.htm">
+									<span data-hover="Home">Home</span>
+								</a>
+							</li>                                            
+							<li>
+								<a href="about.htm">
+									<span data-hover="About">About</span>
+								</a>
+							</li>
+							<li>
+								<a href="portfolio.htm">
+									<span data-hover="Portfolio">Portfolio</span>
+								</a>
+							</li>
+							<li>
+								<a href="contacts.htm">
+									<span data-hover="Contact">Contact</span>
+								</a>
+							</li>
+						</ul>
+
+						<div class="lang">
+							<a class="is-active" href="">En</a>
+							<a href="">Nl</a>
+							<a href="">De</a>
+						</div>
+					</nav>
+				</div><!-- / Menu -->
             </div>
         </div>
 
-		<!-- Menu -->
+		<!-- 
 		<nav class="menu">
 			<button class="btn-menu close">
 				<div>
@@ -80,13 +116,13 @@
 				<a href="">Nl</a>
 				<a href="">DE</a>
 			</div>
-		</nav><!-- / Menu -->
+		</nav>  -->
 
 		<div id="main">
 
 			<!-- Header -->
 			<header class="header-slide animate-item-top"> 
-				<div class="header-video" data-vide-bg="mp4: video/VYB, ogv: video/VYB, webm: video/VYB">
+				<div class="header-video" data-vide-bg="mp4: video/VYB, ogv: video/VYB, webm: video/VYB, poster: images/video-bg-mob.png">
 					
 				</div>
 
@@ -161,8 +197,10 @@
 	                            </p>
 
 	                            <p>
-	                                I would love to hear more about your project, to meet with you wherever it suits you. You can also visit me at our office in the Park Tower at the 13e floor overlooking Arnhem (The Netherlands). <br>Looking forward to speaking with you!
+	                                I would love to hear more about your project, to meet with you wherever it suits you. You can also visit me at our office in the Park Tower at the 13e floor overlooking Arnhem (The Netherlands). 
 	                            </p>
+		
+	                            <p>	Looking forward to speaking with you!</p>
                             </div>
                         </div>
 
@@ -173,7 +211,7 @@
                             </div>
 
                             <div class="a-fade" data-q="1.5s">
-                                <a class="mail" href="mailto: marco@vybvisualization.com">  marco@vybvisualization.com</a>
+                                <a class="mail" href="mailto: mbolhuis@vybvisualization.com">  mbolhuis@vybvisualization.com</a>
                             </div>
                         </div>
                     </div>
@@ -284,8 +322,9 @@
        	<script src="./js/jquery.vide.js"></script>
 
         <!-- Map -->
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-        <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
+       <!--  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script> -->
+     	 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpNfbXDgIaB_O3X2Jf01laH9zqm_C76Mc">
+		</script>
         <script type="text/javascript" src="./js/map.js"></script>
 
 		

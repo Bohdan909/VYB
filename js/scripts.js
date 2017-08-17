@@ -52,17 +52,20 @@ document.documentElement.className = document.documentElement.className.replace(
 
 
 (function($){
+    
 
     $(window).on("load", function(){
 
-        
+        if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
+            var windowHeight = window.innerHeight;
+
+            $(".header-slide").css("height", windowHeight);
+        } 
         
 
         // $(".header-slide").length 
         //     && 
         (function(){
-
-           
 
             setTimeout(
                 () => { 
@@ -130,7 +133,16 @@ document.documentElement.className = document.documentElement.className.replace(
 
 
         
-        
+        // Servise
+        $(".service-item").on("mouseover", function(){
+            var index = $(this).index() + 1;
+            
+            $(this).parent().attr("data-hover", "hovered-" + index);
+        });
+
+        $(".service-item").on("mouseleave", function(){
+            $(this).parent().attr("data-hover", "");
+        });
         
 
 
@@ -146,29 +158,39 @@ document.documentElement.className = document.documentElement.className.replace(
         
         // Menu
         (function(){
+            var $btn  = document.querySelector(".btn-menu");
             var $btnOpen  = document.querySelector(".btn-menu.open");
             var $btnClose  = document.querySelector(".btn-menu.close");
             var $menu = document.querySelector(".menu");
             var $html = document.querySelector("html");
             var $body = document.querySelector("body");
 
-            // $btn.addEventListener("click", function(){
-            //     ($html.className.match(/\bmenu-open\b/)) ? menuClose() : menuOpen()
-            // });
+            $btn.addEventListener("click", function(){
+                ($html.className.match(/\bmenu-open\b/)) ? menuClose() : menuOpen()
+            });
 
-            $btnOpen.addEventListener("click", () => menuOpen());
-            $btnClose.addEventListener("click", () => menuClose());
+            // $btnOpen.addEventListener("click", () => menuOpen());
+            // $btnClose.addEventListener("click", () => menuClose());
 
             function menuOpen(){
                 $html.classList.remove("menu-close");
                 $html.classList.add("menu-open");
-                $body.classList.remove("scroll");
+                // $body.classList.remove("scroll");
+
+                // $('body').on('scroll mousewheel touchmove', function(e) {
+                //     e.preventDefault();
+                //     e.stopPropagation();
+                //     return false;
+                // });
+
             };  
 
             function menuClose(){
                 $html.classList.remove("menu-open");
                 $html.classList.add("menu-close");
-                $body.classList.add("scroll");
+                // $body.classList.add("scroll");
+
+                // $('body').off('scroll mousewheel touchmove');
             }; 
         }());
 
@@ -243,9 +265,46 @@ document.documentElement.className = document.documentElement.className.replace(
                 buildStartStop      : false,
                 mode                : "fade",
 
-                onInitialized: function(){
+
+                onInitialized: function(e, slider) {
                     $(".slider-pan-title").addClass("title-animate");  
+
+                    var time = 1000, // allow movement if < 1000 ms (1 sec)
+                        range = 50,  // swipe movement of 50 pixels triggers the slider
+                        x = 0, t = 0, touch = "ontouchend" in document,
+                        st = (touch) ? 'touchstart' : 'mousedown',
+                        mv = (touch) ? 'touchmove' : 'mousemove',
+                        en = (touch) ? 'touchend' : 'mouseup';
+
+                    $('<div class="swipe-overlay"></div>')
+                        .appendTo(slider.$window)
+                        .on(st, function(e){
+                            // prevent image drag (Firefox)
+                            e.preventDefault();
+                            t = (new Date()).getTime();
+                            x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
+                        })
+                        .on(en, function(e){
+                            t = 0; x = 0;
+                        })
+                        .on(mv, function(e){
+                            e.preventDefault();
+                            var newx = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
+                            r = (x === 0) ? 0 : Math.abs(newx - x),
+                            
+                            // allow if movement < 1 sec
+                            ct = (new Date()).getTime();
+
+                            if (t !== 0 && ct - t < time && r > range) {
+                                if (newx < x) { slider.goForward(); }
+                                if (newx > x) { slider.goBack(); }
+                                t = 0; x = 0;
+                            }
+
+                            console.log("move");
+                        });
                 },
+
 
                 onSlideBegin: function(){
                     $(".slider-pan-title").removeClass("title-animate");
