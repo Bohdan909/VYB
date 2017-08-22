@@ -3982,6 +3982,10 @@ body .logo, body .btn-menu {
 .desc-main .desc-main--right p:last-child {
   margin-bottom: 0;
 }
+.desc-main .desc-main--right ul li {
+  margin-bottom: 7px;
+  line-height: 22px;
+}
 .desc-main .smoke {
   opacity: 0.3;
   top: -150px;
