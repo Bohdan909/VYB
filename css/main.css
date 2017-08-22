@@ -1,4 +1,4 @@
-.ps, .title-line:before, .check.checked:after, .checkbox .custom-checkbox:before, .scroll.ps-container.horizontal .ps-scrollbar-x:after, .popup-wrapper:after, .header-video:after, .top-menu-socket:after, .btn-menu:before, .title-panel:before, .slider-pan div.anythingSlider .arrow:after, .sector-item .sector-img-wrap:after, .tabs li > a span:before, .portfolio-desc-item p:before, .drop-item .drop-img:before, .process .cols:before, .process-item:before, .service-item:after, .service-text:after, .intro-bottom div:nth-child(1):before, .intro-bottom div a:before {
+.ps, .progress:after, .title-line:before, .check.checked:after, .checkbox .custom-checkbox:before, .scroll.ps-container.horizontal .ps-scrollbar-x:after, .popup-wrapper:after, .header-video:after, .top-menu-socket:after, .btn-menu:before, .title-panel:before, .slider-pan div.anythingSlider .arrow:after, .sector-item .sector-img-wrap:after, .tabs li > a span:before, .portfolio-desc-item p:before, .drop-item .drop-img:before, .process .cols:before, .process-item:before, .service-item:after, .service-text:after, .intro-bottom div:nth-child(1):before, .intro-bottom div a:before {
   content: "";
   display: block;
   position: absolute;
@@ -347,34 +347,34 @@
   transform: scale(0);
 }
 .about-main.animate {
-  -webkit-transition-delay: 0.7s !important;
-  -ms-transition-delay: 0.7s !important;
-  transition-delay: 0.7s !important;
+  -webkit-transition-delay: 1.2s !important;
+  -ms-transition-delay: 1.2s !important;
+  transition-delay: 1.2s !important;
   transform: matrix(1, 0, 0, 1, 0, 0);
   max-height: 550px;
 }
 .about-main.animate .about-main--desc {
-  -webkit-transition-delay: 1.3s !important;
-  -ms-transition-delay: 1.3s !important;
-  transition-delay: 1.3s !important;
+  -webkit-transition-delay: 1.8s !important;
+  -ms-transition-delay: 1.8s !important;
+  transition-delay: 1.8s !important;
 }
 .about-main.animate .about-main--image {
-  -webkit-transition-delay: 1.5s !important;
-  -ms-transition-delay: 1.5s !important;
-  transition-delay: 1.5s !important;
+  -webkit-transition-delay: 2s !important;
+  -ms-transition-delay: 2s !important;
+  transition-delay: 2s !important;
 }
 .about-main.animate .image-circ {
-  -webkit-transition-delay: 1.6s !important;
-  -ms-transition-delay: 1.6s !important;
-  transition-delay: 1.6s !important;
+  -webkit-transition-delay: 2.1s !important;
+  -ms-transition-delay: 2.1s !important;
+  transition-delay: 2.1s !important;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
 }
 .about-main.animate .about-w {
-  -webkit-transition-delay: 1.8s !important;
-  -ms-transition-delay: 1.8s !important;
-  transition-delay: 1.8s !important;
+  -webkit-transition-delay: 2.3s !important;
+  -ms-transition-delay: 2.3s !important;
+  transition-delay: 2.3s !important;
 }
 @media (max-width: 1199px) {
   .about-main.animate {
@@ -471,32 +471,147 @@
   width: 55px;
 }
 
-@keyframes draw-lines {
-  to {
-    stroke-dashoffset: 0;
+/* --------------------
+    Preloader
+    ------------------- */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 999999;
+}
+.no-js .preloader {
+  display: none !important;
+}
+.preloader svg {
+  width: 120px;
+}
+
+.preloader-logo-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+}
+.preloader-logo-wrap .preloader-logo {
+  position: absolute;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  margin: -60px 0 0 -150px;
+  z-index: 1;
+  overflow: hidden;
+  padding-bottom: 22px;
+}
+.preloader-logo-wrap .preloader-logo-b {
+  animation: fadeIn 0.3s linear 0s forwards;
+  -webkit-animation: fadeIn 0.3s linear 0s forwards;
+}
+.preloader-logo-wrap .preloader-logo-w svg {
+  animation: logoDown 0.5s ease-in-out 2.5s forwards;
+  -webkit-animation: logoDown 0.5s ease-in-out 2.5s forwards;
+}
+
+.preloader-gates-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  animation: gatesAnimateToBottom 0.5s ease-out 0.3s forwards;
+  -webkit-animation: gatesAnimateToBottom 0.5s ease-out 0.3s forwards;
+}
+
+.preloader-gates {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  overflow: hidden;
+  clip-path: polygon(50.5% 0, 50.2% 0, 50.2% 100%, 50.5% 100%);
+  -webkit-clip-path: polygon(50.5% 0, 50.2% 0, 50.2% 100%, 50.5% 100%);
+  animation: gatesAnimate 0.9s ease-out 0.9s forwards;
+  -webkit-animation: gatesAnimate 0.9s ease-out 0.9s forwards;
+  will-change: clip-path, -webkit-clip-path;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  animation: gatesAnimate 0.9s ease-out 0.9s forwards;
+  -webkit-animation: gatesAnimate 0.9s ease-out 0.9s forwards;
+}
+.progress:after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  animation: gatesAnimate 0.9s ease-out 1.9s forwards;
+  -webkit-animation: gatesAnimate 0.9s ease-out 1.9s forwards;
+}
+
+.progress-wrap {
+  width: 300px;
+  position: relative;
+  left: 50%;
+  top: 20px;
+  margin-left: -150px;
+  height: 2px;
+  clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  animation: collapseAnim 0.9s ease-out 2.4s forwards;
+  -webkit-animation: collapseAnim 0.9s ease-out 2.4s forwards;
+}
+
+@keyframes gatesAnimate {
+  0% {
+    clip-path: polygon(51% 0, 49% 0, 49% 100%, 51% 100%);
+    -webkit-clip-path: polygon(51% 0, 49% 0, 49% 100%, 51% 100%);
+  }
+  100% {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
   }
 }
-.preloader svg .draw-item * {
-  fill-opacity: 0;
-  stroke: #fff;
-  stroke-width: 0.22;
+@keyframes collapseAnim {
+  100% {
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  }
 }
-
-.preloader svg .draw-item * {
-  animation-name: drawLogo;
-  animation-duration: 3s;
-  animation-delay: 0.1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
+@keyframes gatesAnimateToBottom {
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
-
-.preloader .opacity-item {
-  animation: opacity 0.8s linear forwards 2.2s;
-  opacity: 0;
+@keyframes logoDown {
+  100% {
+    transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+  }
 }
-
-@keyframes opacity {
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
@@ -504,21 +619,56 @@
     opacity: 1;
   }
 }
-@keyframes drawLogo {
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes gatesAnimate {
+  0% {
+    clip-path: polygon(51% 0, 49% 0, 49% 100%, 51% 100%);
+    -webkit-clip-path: polygon(51% 0, 49% 0, 49% 100%, 51% 100%);
+  }
+  100% {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+  }
+}
+@-webkit-keyframes collapseAnim {
+  100% {
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    -webkit-clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+  }
+}
+@-webkit-keyframes gatesAnimateToBottom {
+  100% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+@-webkit-keyframes logoDown {
+  100% {
+    transform: translateY(200px);
+    -webkit-transform: translateY(200px);
+  }
+}
+@-webkit-keyframes fadeIn {
   0% {
     opacity: 0;
   }
-  10% {
+  100% {
     opacity: 1;
   }
-  75% {
-    stroke-dashoffset: 0;
-  }
-  50% {
-    fill-opacity: 0;
+}
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
   100% {
-    fill-opacity: 1;
+    opacity: 0;
   }
 }
 .tabs li > a span {
@@ -1924,6 +2074,7 @@ body .logo, body .btn-menu {
   font-size: 14px;
   line-height: 17px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 .menu-wrap .menu .lang > a:before {
   content: "/";
@@ -4299,7 +4450,7 @@ body .logo, body .btn-menu {
     text-align: center;
   }
   .defines .text-v {
-    display: none;
+    right: 40px;
   }
 }
 
@@ -4811,31 +4962,6 @@ body .logo, body .btn-menu {
 .map-wrap img[src="https://maps.gstatic.com/mapfiles/api-3/images/google_white5.png"],
 .map-wrap img[src="https://maps.gstatic.com/mapfiles/api-3/images/google_white5_hdpi.png"] {
   display: none !important;
-}
-
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  z-index: 999999;
-}
-.no-js .preloader {
-  display: none !important;
-}
-.preloader svg {
-  width: 120px;
-}
-
-.preloader-logo-wrap > div {
-  position: absolute;
-  width: 120px;
-  top: 50%;
-  left: 50%;
-  margin: -60px 0 0 -60px;
-  z-index: 1;
 }
 
 .portfolio-wrap {

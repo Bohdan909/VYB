@@ -93,16 +93,28 @@ document.documentElement.className = document.documentElement.className.replace(
         $(this).scrollTop(0);
 
         setTimeout( () => {
-            $(".preloader").fadeOut(1000);
-        }, 1500);
+            $(".home-page .preloader").fadeOut(700);
+        }, 3000);
 
         setTimeout( () => {
-            $(".animate-item-top").addClass("animate");
-        }, 1500);
+            $(".inner-page .preloader").fadeOut(700);
+        }, 2000);
+
+
+        
+
+         setTimeout( () => {
+            $(".home-page .animate-item-top").addClass("animate");
+        }, 2500);
+
+
+         setTimeout( () => {
+            $(".inner-page .animate-item-top").addClass("animate");
+        }, 1300);
 
         // Logo Draw
-        replaceWithPaths($("#logo"));
-        setDash($("#logo"));
+        // replaceWithPaths($("#logo"));
+        // setDash($("#logo"));
 
         // Header Scroll
         (function(){
@@ -197,7 +209,7 @@ document.documentElement.className = document.documentElement.className.replace(
         $(".menu li a, .logo").on("click", function(){
             var href = $(this).attr('href');
 
-            $(".preloader svg").hide();
+            $(".preloader svg, .preloader-logo-wrap").hide();
             $(".preloader").fadeIn(1000);
 
             setTimeout(function() {window.location = href}, 1200);
