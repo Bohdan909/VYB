@@ -183,10 +183,10 @@ $d: 50px;
     .header-video:after {
         @include transition(background, 2.0s, linear);
         @include delay(10s);
-        background: rgba(0, 0, 0, 0.55);
+        background: rgba(0, 0, 0, 0.15);
 
         @include mobile {
-            background: rgba(0, 0, 0, 0.75);
+            background: rgba(0, 0, 0, 0.70);
         } 
     }
 
@@ -221,7 +221,7 @@ $d: 50px;
     ------------------- */ 
 
 .section-mask, .portfolio-mask {
-    @include transition(all, 0.7s, ease-in);
+    @include transition(all, 0.9s, ease-in);
     position: absolute;
     height: 100%;
     width: 100%;   
@@ -255,9 +255,9 @@ $d: 50px;
 }
 
 .portfolio-mask.animate, .section-mask.roll {
-    animation: roll 0.5s ease-in forwards;
-    -webkit-animation: roll 0.5s ease-in forwards;
-    -ms-animation: roll 0.5s ease-in forwards;
+    animation: roll 0.9s ease-in forwards;
+    -webkit-animation: roll 0.9s ease-in forwards;
+    -ms-animation: roll 0.9s ease-in forwards;
 
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
@@ -331,7 +331,7 @@ $d: 50px;
     &.animate {
         @include delay(1.2s);
         transform: matrix(1, 0, 0, 1, 0, 0);
-        max-height: 550px;
+        max-height: 600px;
 
         .about-main--desc {
             @include delay(1.8s);
@@ -415,7 +415,10 @@ $d: 50px;
         @include delay(0.2s);
     }
 
-    &:hover {
+    
+}
+
+.no-touchevents .service-text:hover, .service-text.is-open {
         bottom: auto;
         left: -2px;
         right: -2px;
@@ -432,7 +435,6 @@ $d: 50px;
             opacity: 1;
         }
     }
-}
 
 /* --------------------
     Contacts

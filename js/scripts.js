@@ -101,8 +101,6 @@ document.documentElement.className = document.documentElement.className.replace(
         }, 2000);
 
 
-        
-
          setTimeout( () => {
             $(".home-page .animate-item-top").addClass("animate");
         }, 2500);
@@ -135,15 +133,12 @@ document.documentElement.className = document.documentElement.className.replace(
 
                     window.scrollY > prev || window.scrollY === 0 ? $topMenu.removeClass("is-slide") : $topMenu.addClass("is-slide");
                     
-
                     prev = window.scrollY;
                 });
             };
 
             scrollDirection();
         }());
-
-
         
         // Servise
         $(".service-item").on("mouseover", function(){
@@ -160,6 +155,7 @@ document.documentElement.className = document.documentElement.className.replace(
 
         // Cursor    
         var circle_xy = $('.s-circle').height()/2;
+        
         $('body').mousemove(function(e){
             $('.s-circle').css({'transform': 'translate3d('+(e.pageX-circle_xy)+'px'+','+(e.pageY-circle_xy)+'px'+', 0'});
         });
@@ -260,9 +256,9 @@ document.documentElement.className = document.documentElement.className.replace(
             
             $(".slider-pan .slider").anythingSlider({  
                 autoPlay            : false,
-                delay               : 5000,
+                delay               : 500000,
 
-                animationTime       : 1200,
+                animationTime       : 1000,
                 toggleArrows        : false,
                 expand              : true,
                 resizeContents      : true,
@@ -275,7 +271,7 @@ document.documentElement.className = document.documentElement.className.replace(
                 buildArrows         : true,      
                 buildNavigation     : true,      
                 buildStartStop      : false,
-                mode                : "fade",
+                mode                : "slide",
 
 
                 onInitialized: function(e, slider) {
@@ -292,7 +288,8 @@ document.documentElement.className = document.documentElement.className.replace(
                         .appendTo(slider.$window)
                         .on(st, function(e){
                             // prevent image drag (Firefox)
-                            e.preventDefault();
+
+                            //e.preventDefault();
                             t = (new Date()).getTime();
                             x = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX;
                         })
@@ -300,7 +297,7 @@ document.documentElement.className = document.documentElement.className.replace(
                             t = 0; x = 0;
                         })
                         .on(mv, function(e){
-                            e.preventDefault();
+                        //e.preventDefault();
                             var newx = e.originalEvent.touches ? e.originalEvent.touches[0].pageX : e.pageX,
                             r = (x === 0) ? 0 : Math.abs(newx - x),
                             
@@ -312,8 +309,6 @@ document.documentElement.className = document.documentElement.className.replace(
                                 if (newx > x) { slider.goBack(); }
                                 t = 0; x = 0;
                             }
-
-                            console.log("move");
                         });
                 },
 
@@ -442,14 +437,14 @@ document.documentElement.className = document.documentElement.className.replace(
                     
                     setTimeout(
                         () => {
-                            $portImage.find("img").attr("src", srcImage);
-                        }, 250
+                            $portImage.find("img").attr("src", srcImage).parent().attr("href", srcImage);
+                        }, 450
                     );    
 
                     setTimeout(
                         () => {
                             $portImage.find(".portfolio-mask").removeClass("animate");
-                        }, 500
+                        }, 900
                     );
                 }
 
@@ -487,10 +482,39 @@ document.documentElement.className = document.documentElement.className.replace(
             });    
 
         }());
+
+        // Porfolio Popup
+        $('.popup-item').length && $('.popup-item').magnificPopup({
+            type: 'image',
+            mainClass: 'mfp-with-zoom',
+            fixedContentPos: false,
+
+            zoom: {
+                enabled: true, 
+
+                duration: 300, 
+                easing: 'ease-in-out'
+              }
+        });
         
         // Drop
         $(".drop-item-b .drop-btn").on("click", function(){
             $(this).parent().toggleClass("is-active").find(".drop").slideToggle(400);
+        });
+
+        // Service Mobile
+        var $serText = $(".touchevents .service-text");
+
+        $serText.on("click", function(){
+            var $this = $(this);
+
+            if ($this.hasClass("is-open")){
+                $this.removeClass("is-open");
+            } else {
+                $serText.removeClass("is-open");
+                $this.addClass("is-open");
+            }
+            
         });
 
         // Placeholder Hide

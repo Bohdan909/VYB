@@ -205,6 +205,18 @@ html, body {
     }
 }
 
+.header-video-arn {
+
+    @include tablet {
+        background: url(../images/contacts.png) 50% 0 no-repeat;
+        background-size: cover !important;
+
+        > div {
+            display: none !important;
+        }
+    }
+}
+
 .header-slide-mask {
     @include full;
     z-index: 10;
@@ -1330,12 +1342,14 @@ $menu-anim-dur: 0.6s;
 }
 
 .social {
+    position: relative;
+    top: -7px;
     font-size: 0;
     text-align: left;
 
     li {
         display: inline-block;
-        margin: 0 26px;
+        margin: 0 15px;
 
         a {
             @extend .trans;
@@ -1505,6 +1519,7 @@ $menu-anim-dur: 0.6s;
     }
 
     .borders-s {
+        display: none;
         position: absolute;
         right: -11px;
         bottom: -11px;
@@ -1931,6 +1946,7 @@ $slider-height-m: 350px;
     div.anythingSlider { 
         
         .arrow  {
+            @extend .vis-hidden;
             width: 51px; height:14px; right: 19px; left: auto; cursor: pointer; z-index: 100; background-size: 100% auto !important;
 
             a                  { position: relative; width:51px; height:14px; margin: 0; overflow: hidden; }
@@ -2455,6 +2471,11 @@ $slider-height-m: 350px;
             text-decoration: none;
             letter-spacing: 1.3px;
             background-color: #1b1b1b;
+            white-space: nowrap;
+
+            @include tablet {
+                padding: 0 20px;
+            }
 
             &:hover {
                 background-color: #252525;
@@ -2469,6 +2490,10 @@ $slider-height-m: 350px;
                     top: 31px;
                     height: 1px;
                     background-color: #fff;
+
+                    @include tablet {
+                        top: 22px;
+                    }
 
                     @include mobile {
                         top: 22px;
@@ -2520,13 +2545,20 @@ $slider-height-m: 350px;
             margin-bottom: 25px;
         }
     }
+
+    .filter-tabs {
+        width: 360px;
+        margin: auto;
+    }
 }
 
-.portfolio-wrap {
 
-    // @media (min-width: 1250px){
-    //     padding-top: 100px;
-    // }
+.popup-item {
+    outline: none !important;
+}
+
+.mfp-wrap {
+    z-index: 10000;
 }
 
 .portfolio-block {
@@ -2972,6 +3004,22 @@ $slider-height-m: 350px;
     @include clearfix;
     background: #171717;
     overflow: hidden;
+
+    .socket-i {
+        width: 1200px !important;
+
+        @media (max-width: 1250px){
+            width: 1150px !important;
+        }
+
+        @media (max-width: 1150px){
+            width: 960px !important;
+        }
+
+        @media (max-width: 960px){
+            width: auto !important;
+        }
+    }
     
     .about-main--image, .about-main--desc {
         position: relative;
@@ -2980,7 +3028,11 @@ $slider-height-m: 350px;
     }
 
     .about-main--image {
-        min-height: 460px;
+        min-height: 490px;
+
+        @media (max-width: 1250px){
+            min-height: 530px;
+        }
 
         .about-w {
             position: absolute;
@@ -3008,9 +3060,12 @@ $slider-height-m: 350px;
 
     .about-main--desc {
         float: right;
+        padding-bottom: 15px;
         
         .title {
-            margin-bottom: 50px;
+            font-size: 19px;
+            margin-bottom: 40px;
+            padding-right: 20px;
         }
 
         .text-it {
@@ -3019,7 +3074,8 @@ $slider-height-m: 350px;
         }
     }
 
-    @media (max-width: 1250px){
+    @media (max-width: 1150px){
+        padding-bottom: 0;
 
         .about-main--image, .about-main--desc {
             float: none;
@@ -3108,7 +3164,7 @@ $slider-height-m: 350px;
 .desc-point {
     position: relative;
     line-height: 35px;
-    padding-right: 95px;
+    padding-right: 50px;
     padding-left: 38px;
     margin-bottom: 30px;
 
@@ -3147,6 +3203,7 @@ $slider-height-m: 350px;
 .desc-main {
     @include flex(space-between);
     align-content: stretch;
+    -webkit-align-content: stretch;
     padding-bottom: 75px;
 
     .desc-main--left, .desc-main--right {
@@ -3157,7 +3214,8 @@ $slider-height-m: 350px;
     .desc-main--left {
 
         .title {
-            position: relative;
+            width: 100%;
+            position: absolute;
             top: 50%;
             margin-top: -18px;
             text-align: center;
@@ -3285,6 +3343,7 @@ $slider-height-m: 350px;
                 margin-top: 0;
                 margin-bottom: 45px;
                 text-align: center;
+                position: static;
             }
         }
     }
@@ -3447,6 +3506,11 @@ $slider-height-m: 350px;
         background-size: cover !important;
         background-position: 50% 98% !important;
 
+        .title {
+            @include transition(opacity, 0.45s, linear);
+            opacity: 0;
+        }
+
         &:before {
             @extend .ps;
             @extend .trans;
@@ -3458,8 +3522,15 @@ $slider-height-m: 350px;
             opacity: 0;
         }
 
-        &:hover:before {
-            opacity: 0.5;
+        &:hover {
+
+            .title {
+                opacity: 1;
+            }
+
+            &:before {
+                opacity: 0.5;
+            }
         }
     }
 }
@@ -4391,4 +4462,33 @@ $slider-height-m: 350px;
 
 .portfolio-wrap {
     min-height: 700px;
+}
+
+.portfolio-page {
+    
+    @media (max-width: 1250px){
+
+        .socket-i {
+            width: 1100px;
+        }
+    }
+
+    @media (max-width: 1150px){
+
+        .socket-i {
+            width: 690px;
+        }
+    }
+
+    @media (max-width: 720px){
+
+        .socket-i {
+            width: auto;
+        }
+    }
+}
+
+a, button, a:focus, button:focus, .service-text, .service-text:focus {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
 }
